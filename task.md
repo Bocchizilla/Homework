@@ -1,5 +1,5 @@
 <details>
-  <summary>[WF] WINDOW FUNCTIONS — задачи 1–50</summary>
+  <summary> задачи 1–50</summary>
 
 # [1] Задача
 
@@ -490,4 +490,5 @@ WHERE DATE_TRUNC('month', hire_date) =
 SELECT customer_id
 FROM orders
 GROUP BY customer_id
+
 HAVING MIN(amount) > AVG(amount);
