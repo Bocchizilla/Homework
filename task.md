@@ -56,6 +56,7 @@ FROM (
     FROM employees
 ) t
 WHERE rnk = 1;
+
 # [6] Задача
 SELECT customer_id,
        SUM(amount) AS total_amount,
@@ -151,6 +152,7 @@ WHERE customer_id IN (
     GROUP BY customer_id
     HAVING MAX(amount) > 5000
 );
+
 # [15] Задача
 SELECT *
 FROM (
@@ -161,6 +163,7 @@ FROM (
     FROM employees
 ) t
 WHERE diff > 0;
+
 # [16] Задача
 SELECT customer_id,
        COUNT(*) AS cnt,
@@ -168,6 +171,7 @@ SELECT customer_id,
 FROM orders
 WHERE EXTRACT(YEAR FROM order_date) = 2024
 GROUP BY customer_id;
+
 # [17] Задача
 SELECT *
 FROM employees e
@@ -178,6 +182,7 @@ WHERE salary >
     FROM employees
     WHERE department_id = e.department_id
 );
+
 # [18] Задача
 SELECT *
 FROM (
@@ -188,6 +193,7 @@ FROM (
     FROM orders
 ) t
 WHERE diff > 0;
+
 # [19] Задача
 SELECT department_id,
        AVG(salary) AS avg_salary,
@@ -490,5 +496,4 @@ WHERE DATE_TRUNC('month', hire_date) =
 SELECT customer_id
 FROM orders
 GROUP BY customer_id
-
 HAVING MIN(amount) > AVG(amount);
